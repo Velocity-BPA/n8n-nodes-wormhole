@@ -1,0 +1,95 @@
+{
+  "name": "n8n-nodes-wormhole",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Wormhole cross-chain messaging and token bridge protocol providing 13 resources and 80+ operations for VAA management, token bridging, NTT, guardian network monitoring, and multi-chain analytics across 30+ blockchains.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-wormhole.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-wormhole#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-wormhole/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "wormhole",
+    "cross-chain",
+    "bridge",
+    "blockchain",
+    "multichain",
+    "vaa",
+    "token-bridge",
+    "portal",
+    "ntt",
+    "ethereum",
+    "solana",
+    "polygon",
+    "avalanche",
+    "arbitrum",
+    "optimism",
+    "bsc",
+    "aptos",
+    "sui",
+    "web3",
+    "defi"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/WormholeApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Wormhole/Wormhole.node.js",
+      "dist/nodes/Wormhole/WormholeTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.4",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.20.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
